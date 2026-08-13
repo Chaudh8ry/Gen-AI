@@ -6,7 +6,6 @@ from langchain_core.messages import AIMessage,HumanMessage,SystemMessage
 
 model = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite")
 
-
 print("Select Your AI's Mood")
 print("press 1 for ANGRY Mode")
 print("press 2 for FUNNY Mode")
