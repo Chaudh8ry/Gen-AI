@@ -34,7 +34,8 @@ para = input("Give Movie Description: ")
 
 final_prompt = prompt.invoke(
     {"paragraph": para,
-     'format_instructions':parser.get_format_instructions}
+     'format_instructions':parser.get_format_instructions()
+     }
 )
 
 response = model.invoke(final_prompt)
