@@ -1,9 +1,11 @@
+# BaseModel is used to define data models with validation
+# Field allows you to add metadata like descriptions and default values
 from pydantic import BaseModel, Field
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 load_dotenv()
 
-from typing import TypedDict, Literal, Annotated, Optional
+from typing import Literal, Optional
 
 # making the schema
 class Review(BaseModel):
@@ -11,6 +13,7 @@ class Review(BaseModel):
     summary: str = Field(description="A brief summary of the review")
     sentiment: Literal["pos","neg"] = Field(description="Return the sentiment of the review")
     pros: Optional[list[str]] = Field(default=None,description="Write down all the pros inside a list")
+    # (optional, can be None)
     cons: Optional[list[str]] = Field(default=None,description="Write down all the cons inside a list")
     name: Optional[str] = Field(default=None,description="Write the name of the reviewer")
 
